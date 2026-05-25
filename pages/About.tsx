@@ -70,11 +70,11 @@ const About: React.FC = () => {
       </section>
 
       {/* ── MISSION & VISION ─────────────────────────────────────── */}
-      <section className="py-24 md:py-32 bg-parchment-50">
+      <section className="py-24 md:py-32 bg-parchment-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border border-parchment-200">
-            <div className="p-12 md:p-16 border-b md:border-b-0 md:border-r border-parchment-200">
-              <div className="w-10 h-10 flex items-center justify-center bg-forest-50 text-forest-700 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border border-ink-200 shadow-sm">
+            <div className="p-12 md:p-16 bg-white border-b md:border-b-0 md:border-r border-ink-200">
+              <div className="w-10 h-10 flex items-center justify-center bg-forest-100 text-forest-700 mb-8">
                 <Target size={20} />
               </div>
               <h2 className="font-display text-4xl font-light text-forest-900 mb-6">Our Mission</h2>
@@ -85,8 +85,8 @@ const About: React.FC = () => {
                 health systems.
               </p>
             </div>
-            <div className="p-12 md:p-16">
-              <div className="w-10 h-10 flex items-center justify-center bg-forest-50 text-forest-700 mb-8">
+            <div className="p-12 md:p-16 bg-white">
+              <div className="w-10 h-10 flex items-center justify-center bg-forest-100 text-forest-700 mb-8">
                 <Globe2 size={20} />
               </div>
               <h2 className="font-display text-4xl font-light text-forest-900 mb-6">Our Vision</h2>
@@ -101,7 +101,7 @@ const About: React.FC = () => {
       </section>
 
       {/* ── LEADERSHIP ───────────────────────────────────────────── */}
-      <section className="py-24 md:py-32 bg-parchment-100">
+      <section className="py-24 md:py-32 bg-ink-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-4">
             <span className="w-8 h-px bg-gold-400" />
@@ -116,7 +116,7 @@ const About: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {leadership.map((leader, i) => (
-              <div key={i} className="group bg-parchment-50 border border-parchment-200 hover:border-forest-300 transition-all duration-300">
+              <div key={i} className="group bg-white border border-ink-200 hover:border-forest-400 shadow-sm hover:shadow-md transition-all duration-300">
                 <div className="overflow-hidden h-72">
                   <img
                     src={leader.img}

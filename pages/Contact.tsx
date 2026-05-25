@@ -59,7 +59,7 @@ const Contact: React.FC = () => {
 
               <div className="space-y-8">
                 {offices.map((office, i) => (
-                  <div key={i} className="border border-parchment-200 bg-parchment-50 p-8 hover:border-forest-300 transition-colors">
+                  <div key={i} className="border border-ink-200 bg-white shadow-sm p-8 hover:border-forest-400 transition-colors">
                     <div className="flex items-center gap-3 mb-6">
                       <MapPin size={15} className="text-gold-500 flex-shrink-0" />
                       <h3 className="font-display text-2xl font-medium text-forest-900">{office.city}</h3>
@@ -110,7 +110,7 @@ const Contact: React.FC = () => {
                     </label>
                     <input
                       type="text"
-                      className="w-full bg-transparent border-0 border-b border-parchment-300 focus:border-forest-600 focus:outline-none py-3 text-ink-900 font-light placeholder:text-ink-300 transition-colors text-sm"
+                      className="w-full bg-transparent border-0 border-b border-ink-300 focus:border-forest-600 focus:outline-none py-3 text-ink-900 font-light placeholder:text-ink-300 transition-colors text-sm"
                       placeholder="Elena"
                     />
                   </div>
@@ -120,7 +120,7 @@ const Contact: React.FC = () => {
                     </label>
                     <input
                       type="text"
-                      className="w-full bg-transparent border-0 border-b border-parchment-300 focus:border-forest-600 focus:outline-none py-3 text-ink-900 font-light placeholder:text-ink-300 transition-colors text-sm"
+                      className="w-full bg-transparent border-0 border-b border-ink-300 focus:border-forest-600 focus:outline-none py-3 text-ink-900 font-light placeholder:text-ink-300 transition-colors text-sm"
                       placeholder="Rossi"
                     />
                   </div>
@@ -132,7 +132,7 @@ const Contact: React.FC = () => {
                   </label>
                   <input
                     type="email"
-                    className="w-full bg-transparent border-0 border-b border-parchment-300 focus:border-forest-600 focus:outline-none py-3 text-ink-900 font-light placeholder:text-ink-300 transition-colors text-sm"
+                    className="w-full bg-transparent border-0 border-b border-ink-300 focus:border-forest-600 focus:outline-none py-3 text-ink-900 font-light placeholder:text-ink-300 transition-colors text-sm"
                     placeholder="you@organization.org"
                   />
                 </div>
@@ -142,7 +142,7 @@ const Contact: React.FC = () => {
                     Organization Type
                   </label>
                   <select
-                    className="w-full bg-transparent border-0 border-b border-parchment-300 focus:border-forest-600 focus:outline-none py-3 text-ink-700 font-light transition-colors text-sm appearance-none"
+                    className="w-full bg-transparent border-0 border-b border-ink-300 focus:border-forest-600 focus:outline-none py-3 text-ink-700 font-light transition-colors text-sm appearance-none"
                   >
                     <option>Government / Ministry of Health</option>
                     <option>Non-Governmental Organization (NGO)</option>
@@ -158,7 +158,7 @@ const Contact: React.FC = () => {
                   </label>
                   <textarea
                     rows={5}
-                    className="w-full bg-transparent border-0 border-b border-parchment-300 focus:border-forest-600 focus:outline-none py-3 text-ink-900 font-light placeholder:text-ink-300 transition-colors text-sm resize-none"
+                    className="w-full bg-transparent border-0 border-b border-ink-300 focus:border-forest-600 focus:outline-none py-3 text-ink-900 font-light placeholder:text-ink-300 transition-colors text-sm resize-none"
                     placeholder="Tell us about your project..."
                   />
                 </div>

@@ -122,7 +122,7 @@ const Home: React.FC = () => {
                   'Cross-sectoral partnership facilitation',
                   'Rapid response mechanisms for outbreaks',
                 ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-4 py-4 border-b border-parchment-200">
+                  <div key={i} className="flex items-center gap-4 py-4 border-b border-ink-200">
                     <span className="w-2 h-2 bg-gold-400 rounded-full flex-shrink-0" />
                     <span className="text-ink-700 font-medium text-sm">{item}</span>
                   </div>
@@ -217,7 +217,7 @@ const Home: React.FC = () => {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 border border-parchment-200">
+          <div className="grid grid-cols-1 md:grid-cols-3 border border-ink-200 shadow-sm">
             {[
               {
                 num: '01',
@@ -237,7 +237,7 @@ const Home: React.FC = () => {
             ].map((service, i) => (
               <div
                 key={i}
-                className={`p-10 group hover:bg-forest-900 transition-all duration-300 cursor-default ${i < 2 ? 'border-b md:border-b-0 md:border-r border-parchment-200' : ''}`}
+                className={`p-10 bg-white group hover:bg-forest-900 transition-all duration-300 cursor-default ${i < 2 ? 'border-b md:border-b-0 md:border-r border-ink-200' : ''}`}
               >
                 <div className="font-display text-7xl font-light text-parchment-200 group-hover:text-forest-700 transition-colors duration-300 mb-8 leading-none">
                   {service.num}

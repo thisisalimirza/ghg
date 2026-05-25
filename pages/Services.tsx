@@ -81,22 +81,22 @@ const Services: React.FC = () => {
       </section>
 
       {/* ── SERVICES GRID ────────────────────────────────────────── */}
-      <section className="py-24 bg-parchment-50">
+      <section className="py-24 bg-parchment-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 border border-parchment-200">
+          <div className="grid grid-cols-1 md:grid-cols-2 border border-ink-200 shadow-sm">
             {services.map((service, i) => (
               <div
                 key={i}
-                className={`group p-10 md:p-12 hover:bg-forest-900 transition-all duration-300 cursor-default
-                  ${i % 2 === 0 ? 'md:border-r border-parchment-200' : ''}
-                  ${i < 4 ? 'border-b border-parchment-200' : ''}
+                className={`group p-10 md:p-12 bg-white hover:bg-forest-900 transition-all duration-300 cursor-default
+                  ${i % 2 === 0 ? 'md:border-r border-ink-200' : ''}
+                  ${i < 4 ? 'border-b border-ink-200' : ''}
                 `}
               >
                 <div className="flex items-start justify-between mb-8">
                   <span className="font-display text-6xl font-light text-parchment-200 group-hover:text-forest-700 transition-colors duration-300 leading-none">
                     {service.num}
                   </span>
-                  <div className="w-9 h-9 flex items-center justify-center border border-parchment-200 group-hover:border-forest-700 text-forest-700 group-hover:text-gold-400 transition-all duration-300">
+                  <div className="w-9 h-9 flex items-center justify-center border border-ink-200 group-hover:border-forest-700 text-forest-700 group-hover:text-gold-400 transition-all duration-300">
                     {service.icon}
                   </div>
                 </div>
