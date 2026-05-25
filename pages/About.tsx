@@ -134,38 +134,39 @@ const About: React.FC = () => {
             </div>
           </div>
 
-          {/* Supporting team */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[
-              {
-                name: 'Dr. Aisha Nkomo',
-                role: 'Senior Epidemiologist',
-                bio: 'Former WHO surveillance lead for East Africa. Specializes in integrated disease surveillance, outbreak response, and DHIS2 implementation across fragile states.',
-                img: 'https://picsum.photos/seed/person2/400/400',
-              },
-              {
-                name: 'Marcus Evangelista',
-                role: 'Health Systems Specialist',
-                bio: 'Former World Bank health financing advisor. Expert in UHC costing, Essential Package of Health Services design, and community health worker policy frameworks.',
-                img: 'https://picsum.photos/seed/person3/400/400',
-              },
-            ].map((member, i) => (
-              <div key={i} className="group bg-white border border-ink-200 hover:border-forest-400 shadow-sm hover:shadow-md transition-all duration-300">
-                <div className="overflow-hidden h-56">
-                  <img
-                    src={member.img}
-                    alt={member.name}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
-                  />
-                </div>
-                <div className="p-8">
-                  <div className="w-6 h-px bg-gold-400 mb-5" />
-                  <h3 className="font-display text-2xl font-medium text-forest-900 mb-1">{member.name}</h3>
-                  <p className="text-[11px] tracking-[0.15em] uppercase text-gold-600 font-medium mb-4">{member.role}</p>
-                  <p className="text-ink-500 text-sm font-light leading-relaxed">{member.bio}</p>
-                </div>
+          {/* How GHG works */}
+          <div className="mt-10 bg-forest-900 text-parchment-100 p-10 md:p-14">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+              <div className="md:col-span-1">
+                <div className="w-6 h-px bg-gold-400 mb-5" />
+                <h3 className="font-display text-3xl font-light mb-3">How GHG Works</h3>
+                <p className="text-parchment-400 text-sm font-light leading-relaxed">
+                  GHG is intentionally boutique. Every engagement is led personally by Dr. Mirza — not delegated to a junior analyst.
+                </p>
               </div>
-            ))}
+              <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-8">
+                {[
+                  {
+                    title: 'Direct Access',
+                    desc: 'You work with the expert from day one — the person whose name is on the publications and the roadmaps.',
+                  },
+                  {
+                    title: 'Field-Tested',
+                    desc: 'Recommendations come from someone who has actually implemented programs in Somalia, Afghanistan, and Lebanon — not just modeled them.',
+                  },
+                  {
+                    title: 'Flexible Scope',
+                    desc: 'From a two-week technical review to a multi-month embedded advisory. Engagements are sized to what the work actually requires.',
+                  },
+                ].map((item, i) => (
+                  <div key={i}>
+                    <div className="w-4 h-px bg-gold-400 mb-4" />
+                    <h4 className="font-display text-lg font-medium text-parchment-100 mb-2">{item.title}</h4>
+                    <p className="text-parchment-400 text-sm font-light leading-relaxed">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -60,7 +60,7 @@ const Home: React.FC = () => {
                 to="/contact"
                 className="group inline-flex items-center gap-3 border border-parchment-600 text-parchment-200 px-8 py-4 text-[11px] tracking-[0.15em] uppercase font-medium hover:bg-white/5 transition-colors duration-200"
               >
-                Contact Us
+                Work With Dr. Mirza
                 <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>

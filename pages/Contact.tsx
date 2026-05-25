@@ -34,10 +34,10 @@ const Contact: React.FC = () => {
             <span className="text-gold-400 text-[11px] tracking-[0.3em] uppercase font-medium">Get in Touch</span>
           </div>
           <h1 className="font-display font-light text-parchment-100 leading-tight" style={{ fontSize: 'clamp(3rem, 6vw, 5rem)' }}>
-            Partner With<br /><em className="italic text-parchment-300">Our Team</em>
+            Work Directly<br /><em className="italic text-parchment-300">With the Expert</em>
           </h1>
           <p className="text-parchment-400 text-xl font-light mt-6 max-w-2xl leading-relaxed">
-            Ready to deploy technical expertise to your project. Contact our regional hubs below.
+            Every inquiry goes directly to Dr. Mirza. Describe your challenge and he will respond personally to discuss whether and how GHG can help.
           </p>
         </div>
       </section>
@@ -54,7 +54,7 @@ const Contact: React.FC = () => {
                 <span className="text-gold-600 text-[11px] tracking-[0.25em] uppercase font-medium">Our Offices</span>
               </div>
               <h2 className="font-display text-4xl font-light text-forest-900 mb-12">
-                Regional Hubs
+                Based in Geneva
               </h2>
 
               <div className="space-y-8">
@@ -84,10 +84,9 @@ const Contact: React.FC = () => {
               {/* Field presence note */}
               <div className="mt-8 p-8 bg-forest-900 text-parchment-200">
                 <div className="font-display text-5xl font-light text-gold-400 mb-2">50+</div>
-                <div className="text-[10px] tracking-[0.2em] uppercase text-parchment-400 mb-4">Countries of Field Operation</div>
+                <div className="text-[10px] tracking-[0.2em] uppercase text-parchment-400 mb-4">Countries of Direct Field Experience</div>
                 <p className="text-sm font-light text-parchment-300 leading-relaxed">
-                  Beyond our permanent offices, our consultants are embedded with Ministries of Health
-                  across sub-Saharan Africa, South Asia, and Southeast Asia.
+                  Dr. Mirza has worked across sub-Saharan Africa, South Asia, the Middle East, and Southeast Asia — and operates globally for the right engagement.
                 </p>
               </div>
             </div>
@@ -99,7 +98,7 @@ const Contact: React.FC = () => {
                 <span className="text-gold-600 text-[11px] tracking-[0.25em] uppercase font-medium">Send an Inquiry</span>
               </div>
               <h2 className="font-display text-4xl font-light text-forest-900 mb-12">
-                Start the Conversation
+                Get in Touch
               </h2>
 
               <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>

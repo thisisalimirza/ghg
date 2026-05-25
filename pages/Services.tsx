@@ -148,20 +148,105 @@ const Services: React.FC = () => {
         </div>
       </section>
 
+      {/* ── ENGAGEMENT TYPES ─────────────────────────────────────── */}
+      <section className="py-24 md:py-32 bg-parchment-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="flex items-center gap-3 mb-4">
+            <span className="w-8 h-px bg-gold-400" />
+            <span className="text-gold-600 text-[11px] tracking-[0.25em] uppercase font-medium">How to Work With Us</span>
+          </div>
+          <h2 className="font-display font-light text-forest-900 mb-4" style={{ fontSize: 'clamp(2.5rem, 5vw, 3.75rem)' }}>
+            Typical <em className="italic">Engagements</em>
+          </h2>
+          <p className="text-ink-500 font-light mb-16 max-w-2xl">
+            Every engagement is led personally by Dr. Mirza. Scope is sized to what the work actually requires — from a focused two-week review to a long-term embedded advisory.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border border-ink-200 shadow-sm">
+            {[
+              {
+                duration: '1–2 weeks',
+                title: 'Technical Review',
+                desc: 'A rapid, expert assessment of a program, proposal, or policy document. Typical outputs: annotated review, technical memo, or brief oral debrief.',
+                examples: ['EVM assessment', 'Grant proposal review', 'Immunization strategy critique'],
+              },
+              {
+                duration: '2–6 weeks',
+                title: 'Policy Brief or Strategy',
+                desc: 'Development of an evidence-based policy document, country strategy, or technical background paper for a donor, ministry, or multilateral audience.',
+                examples: ['Vaccine introduction strategy', 'PHC integration roadmap', 'Surveillance system design'],
+              },
+              {
+                duration: '1–3 months',
+                title: 'Program Evaluation',
+                desc: 'A structured M&E engagement — data quality audit, coverage survey design, or end-of-project evaluation — with full written report and recommendations.',
+                examples: ['DQA exercise', 'Coverage survey methodology', 'Mid-term or final evaluation'],
+              },
+              {
+                duration: 'Flexible',
+                title: 'Training & Capacity Building',
+                desc: 'Workshop design and facilitation for government counterparts or NGO teams — on immunization micro-planning, data use, outbreak response, or surveillance.',
+                examples: ['Ministry of Health workshop', 'DHIS2 data use training', 'SIA micro-planning'],
+              },
+              {
+                duration: 'Ongoing',
+                title: 'Technical Advisory Retainer',
+                desc: 'Monthly access to Dr. Mirza as a senior advisor — available for questions, document reviews, strategy sessions, and stakeholder meetings as needed.',
+                examples: ['Donor reporting support', 'Strategic sounding board', 'Proposal development'],
+              },
+              {
+                duration: '3–12 months',
+                title: 'Embedded TA',
+                desc: 'Long-term technical assistance embedded with a Ministry of Health or implementing partner — working side-by-side with national counterparts on priority programs.',
+                examples: ['New vaccine introduction', 'Health system strengthening', 'Emergency response support'],
+              },
+            ].map((eng, i) => (
+              <div
+                key={i}
+                className={`bg-white p-10 hover:bg-forest-900 group transition-all duration-300 cursor-default
+                  ${i % 3 !== 2 ? 'lg:border-r border-ink-200' : ''}
+                  ${i % 2 === 0 ? 'md:border-r lg:border-r-0 border-ink-200' : ''}
+                  ${[0,1,2].includes(i) ? (i < 2 ? 'md:border-r' : '') : ''}
+                  ${i < 3 ? 'border-b border-ink-200' : ''}
+                `}
+              >
+                <span className="inline-block text-[10px] tracking-[0.2em] uppercase font-medium text-gold-600 group-hover:text-gold-400 bg-parchment-100 group-hover:bg-forest-800 px-3 py-1 mb-6 transition-colors duration-300">
+                  {eng.duration}
+                </span>
+                <h3 className="font-display text-2xl font-medium text-forest-900 group-hover:text-parchment-100 mb-3 transition-colors duration-300">
+                  {eng.title}
+                </h3>
+                <p className="text-ink-500 text-sm font-light leading-relaxed mb-6 group-hover:text-parchment-300 transition-colors duration-300">
+                  {eng.desc}
+                </p>
+                <ul className="space-y-1.5">
+                  {eng.examples.map((ex, ei) => (
+                    <li key={ei} className="flex items-center gap-2 text-xs text-forest-700 group-hover:text-parchment-300 font-medium transition-colors duration-300">
+                      <span className="w-1 h-1 bg-gold-400 rounded-full flex-shrink-0" />
+                      {ex}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── CTA ──────────────────────────────────────────────────── */}
       <section className="py-20 bg-parchment-100 border-t border-parchment-200 text-center">
         <div className="max-w-2xl mx-auto px-6">
           <h2 className="font-display text-4xl font-light text-forest-900 mb-4">
-            Need a Custom Technical Proposal?
+            Not Sure Where to Start?
           </h2>
           <p className="text-ink-500 font-light mb-10">
-            Our team will scope a tailored engagement for your organization's specific context and goals.
+            Reach out with your challenge. Dr. Mirza will respond personally to scope the right kind of engagement.
           </p>
           <Link
             to="/contact"
             className="group inline-flex items-center gap-3 bg-forest-900 text-parchment-100 px-8 py-4 text-[11px] tracking-[0.15em] uppercase font-medium hover:bg-forest-800 transition-colors"
           >
-            Contact Our Team
+            Start the Conversation
             <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
