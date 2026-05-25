@@ -6,7 +6,7 @@ const About: React.FC = () => {
   const timeline = [
     {
       year: '2008',
-      text: 'Founded in Geneva to support GAVI's initial health systems strengthening funding rounds.',
+      text: "Founded in Geneva to support GAVI's initial health systems strengthening funding rounds.",
     },
     {
       year: '2014',
