@@ -7,42 +7,48 @@ const domains = [
     tag: 'Immunization & VPDs',
     icon: <Microscope size={18} />,
     title: 'Vaccine Preventable Diseases',
-    desc: 'Our team has been instrumental in the global polio eradication effort and the introduction of HPV and Malaria vaccines in sub-Saharan Africa. We understand the nuances of cold chain logistics, micro-planning, and community mobilization.',
+    desc: 'GHG\'s founding expertise. We have directly shaped global immunization strategy — from co-leading the WHO\'s Defeating Meningitis by 2030 Roadmap to guiding COVAX pandemic response in 11 African countries, to polio eradication field work in Afghanistan and measles campaigns in Somalia.',
     features: [
-      'Zero-dose children identification strategies',
+      'Second-year-of-life immunization platform design',
+      'Zero-dose children identification & microplanning',
       'Supplementary Immunization Activity (SIA) planning',
-      'Cold Chain Equipment Optimization Platform (CCEOP) support',
+      'New vaccine introduction — HPV, Malaria, meningococcal',
+      'Cold Chain Equipment Optimization (CCEOP)',
     ],
-    stat: { num: '98%', label: 'Coverage reached in pilot districts' },
+    stat: { num: '11', label: 'African countries — COVAX integration led' },
     img: 'https://picsum.photos/seed/medical1/800/600',
     imgAlt: 'Immunization field work',
   },
   {
-    tag: 'Digital Health & Data',
+    tag: 'Fragile States & Emergency Response',
     icon: <Database size={18} />,
-    title: 'Health Information Systems',
-    desc: 'Data is the backbone of decision-making. We specialize in DHIS2 configuration, interoperability standards (FHIR), and building data use cultures within Ministries of Health.',
+    title: 'Health in Crisis Settings',
+    desc: 'Field-tested across some of the world\'s hardest environments. Our founder spent years embedded in Somalia, Lebanon, and Afghanistan — developing practical models for maintaining immunization and primary health care continuity when health systems are broken or non-existent.',
     features: [
-      'DHIS2 dashboard customization & training',
-      'Electronic Medical Records (EMR) assessments',
-      'GIS mapping for health facility accessibility',
+      'Child Health Days — integrated campaign design',
+      'Post-conflict health system reconstruction',
+      'Emergency maternal health service scale-up',
+      'Outbreak response in low-resource settings',
+      'Reaching zero-dose children in conflict zones',
     ],
-    stat: { num: '14', label: 'National Data Systems Integrated' },
+    stat: { num: '4×', label: 'Increase in facility-based deliveries, Somalia' },
     img: 'https://picsum.photos/seed/digital/800/600',
-    imgAlt: 'Digital health systems',
+    imgAlt: 'Field health operations',
     reverse: true,
   },
   {
-    tag: 'PHC & UHC',
+    tag: 'PHC & Health Systems',
     icon: <HeartPulse size={18} />,
-    title: 'Primary Health Care',
-    desc: 'Strengthening the first line of defense. We work on the integration of services — bringing HIV, TB, and Malaria services into routine primary care to maximize efficiency and patient outcomes.',
+    title: 'Primary Health Care & UHC',
+    desc: 'Bridging the gap between global mandates and country-level reality. We help Ministries of Health integrate immunization into broader primary care platforms — leveraging COVID-19 investments to build durable systems that advance Universal Health Coverage.',
     features: [
+      'Life-course vaccination integrated into PHC',
+      'COVID-19 investments → PHC system strengthening',
       'Community Health Worker (CHW) policy frameworks',
       'Essential Package of Health Services (EPHS) costing',
-      'Quality of Care (QoC) improvement collaboratives',
+      'DHIS2 data systems & health information culture',
     ],
-    stat: { num: '5,000+', label: 'Health Workers Trained' },
+    stat: { num: '50+', label: 'Countries of direct field engagement' },
     img: 'https://picsum.photos/seed/doctor/800/600',
     imgAlt: 'Primary health care',
   },
@@ -69,8 +75,8 @@ const Expertise: React.FC = () => {
             Deep Technical<br /><em className="italic text-parchment-300">Expertise</em>
           </h1>
           <p className="text-parchment-400 text-xl font-light mt-6 max-w-2xl leading-relaxed">
-            We don't just manage projects — we bring deep subject matter expertise
-            to specific domains of global health.
+            Three decades of UNICEF field experience across 50+ countries — applied
+            directly to your immunization, emergency response, and health systems challenges.
           </p>
         </div>
       </section>

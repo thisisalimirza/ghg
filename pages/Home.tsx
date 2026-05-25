@@ -42,8 +42,9 @@ const Home: React.FC = () => {
               className="text-parchment-400 text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-14 animate-fade-up"
               style={{ animationDelay: '0.25s' }}
             >
-              We partner with GAVI, WHO, and UNICEF to design resilient health systems
-              and deliver data-driven strategies for the world's most pressing challenges.
+              Founded by a former UNICEF Global Health Advisor with 20+ years of field work
+              across Somalia, Afghanistan, and Lebanon — GHG translates institutional
+              knowledge into precise, implementable solutions for governments and global health partners.
             </p>
 
             {/* CTAs */}
@@ -80,10 +81,10 @@ const Home: React.FC = () => {
       <section className="bg-parchment-100 py-14 border-b border-parchment-200">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <p className="text-center text-[10px] font-medium text-ink-400 tracking-[0.3em] uppercase mb-10">
-            Trusted by Global Leaders
+            Career Built Across Leading Global Institutions
           </p>
           <div className="flex flex-wrap justify-center items-center gap-10 md:gap-20">
-            {['WHO', 'UNICEF', 'Gavi', 'Bill & Melinda Gates Foundation'].map((partner) => (
+            {['WHO', 'UNICEF', 'Gavi', 'Bill & Melinda Gates Foundation', 'Africa CDC'].map((partner) => (
               <span
                 key={partner}
                 className="font-display text-xl md:text-2xl font-medium text-ink-300 hover:text-forest-700 transition-colors duration-300 cursor-default"
@@ -110,17 +111,14 @@ const Home: React.FC = () => {
                 <em className="italic">&amp; Implementation</em>
               </h2>
               <p className="text-ink-600 text-lg font-light leading-relaxed mb-10">
-                Global Health Group is a specialized consultancy dedicated to strengthening
-                health systems in low- and middle-income countries. With decades of collective
-                experience, our team provides technical assistance that is rigorous and
-                context-specific.
+                Global Health Group brings over two decades of frontline UNICEF experience to the world's most complex immunization and health systems challenges. Founded by a former Global Health Advisor at UNICEF Headquarters, our work is grounded in field reality — from post-conflict Somalia to fragile-state Afghanistan to policy corridors in Geneva and New York.
               </p>
 
               <div className="space-y-0 mb-10">
                 {[
-                  'Evidence-based strategy development',
-                  'Cross-sectoral partnership facilitation',
-                  'Rapid response mechanisms for outbreaks',
+                  'Vaccine delivery & immunization systems',
+                  'Policy translation from evidence to action',
+                  'Rapid response in fragile and conflict-affected states',
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-4 py-4 border-b border-ink-200">
                     <span className="w-2 h-2 bg-gold-400 rounded-full flex-shrink-0" />
@@ -147,14 +145,14 @@ const Home: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-forest-950/80 via-forest-950/10 to-transparent" />
                 <div className="absolute bottom-8 left-8">
-                  <div className="font-display text-7xl font-light text-gold-400">15</div>
-                  <div className="text-[10px] tracking-[0.2em] uppercase text-parchment-300 mt-1">Years of Excellence</div>
+                  <div className="font-display text-7xl font-light text-gold-400">20+</div>
+                  <div className="text-[10px] tracking-[0.2em] uppercase text-parchment-300 mt-1">Years at UNICEF</div>
                 </div>
               </div>
               {/* Floating stat card */}
               <div className="absolute -bottom-8 -right-2 md:-right-6 bg-forest-900 text-parchment-100 p-8 w-44 md:w-52 shadow-xl">
                 <div className="font-display text-5xl font-light text-gold-400">50+</div>
-                <div className="text-[10px] tracking-[0.15em] uppercase text-parchment-400 mt-2">Countries Served</div>
+                <div className="text-[10px] tracking-[0.15em] uppercase text-parchment-400 mt-2">Countries of Field Work</div>
               </div>
             </div>
           </div>
@@ -170,10 +168,10 @@ const Home: React.FC = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4">
             {[
-              { num: '50+',  label: 'Countries Served' },
-              { num: '200+', label: 'Projects Completed' },
-              { num: '$500M', label: 'Grant Funding Secured' },
-              { num: '15',   label: 'Years of Excellence' },
+              { num: '50+',  label: 'Countries of Field Operation' },
+              { num: '25+',  label: 'Peer-Reviewed Publications' },
+              { num: '20+',  label: 'Years at UNICEF' },
+              { num: '3',    label: 'Global Health Roadmaps Co-Led' },
             ].map((stat, i) => (
               <div
                 key={i}
