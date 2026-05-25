@@ -6,33 +6,30 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
 }
 
-export const Button: React.FC<ButtonProps> = ({ 
-  variant = 'primary', 
-  size = 'md', 
-  className = '', 
-  children, 
-  ...props 
+export const Button: React.FC<ButtonProps> = ({
+  variant = 'primary',
+  size = 'md',
+  className = '',
+  children,
+  ...props
 }) => {
-  const baseStyles = "inline-flex items-center justify-center rounded-md font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none";
-  
+  const base = "inline-flex items-center justify-center font-sans font-medium tracking-[0.08em] uppercase transition-colors duration-200 focus:outline-none disabled:opacity-50 disabled:pointer-events-none";
+
   const variants = {
-    primary: "bg-brand-800 text-white hover:bg-brand-900 focus:ring-brand-500",
-    secondary: "bg-accent-500 text-white hover:bg-accent-600 focus:ring-accent-500",
-    outline: "border border-brand-200 bg-transparent hover:bg-brand-50 text-brand-900",
-    ghost: "bg-transparent hover:bg-slate-100 text-slate-700",
+    primary:   "bg-forest-900 text-parchment-100 hover:bg-forest-800",
+    secondary: "bg-gold-400 text-forest-950 hover:bg-gold-300",
+    outline:   "border border-forest-900 text-forest-900 hover:bg-forest-900 hover:text-parchment-100",
+    ghost:     "text-ink-600 hover:text-forest-900",
   };
 
   const sizes = {
-    sm: "h-9 px-3 text-sm",
-    md: "h-10 px-4 py-2",
-    lg: "h-12 px-8 text-lg",
+    sm: "text-xs px-4 py-2",
+    md: "text-xs px-6 py-3",
+    lg: "text-sm px-8 py-4",
   };
 
   return (
-    <button 
-      className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`} 
-      {...props}
-    >
+    <button className={`${base} ${variants[variant]} ${sizes[size]} ${className}`} {...props}>
       {children}
     </button>
   );
