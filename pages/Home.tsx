@@ -1,127 +1,288 @@
 import React from 'react';
-import { ArrowRight, ShieldCheck, Activity } from 'lucide-react';
-import { Button } from '../components/Button';
+import { ArrowRight, ArrowDownRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Home: React.FC = () => {
   return (
     <>
-      {/* HERO SECTION */}
-      <section className="relative bg-brand-950 pt-32 pb-24 md:pt-48 md:pb-32 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <svg className="h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <path d="M0 100 C 20 0 50 0 100 100 Z" fill="white" />
-          </svg>
+      {/* ── HERO ─────────────────────────────────────────────────── */}
+      <section className="relative bg-forest-950 min-h-screen flex flex-col justify-center overflow-hidden">
+        {/* Watermark */}
+        <div className="absolute inset-0 flex items-center justify-end pr-8 pointer-events-none select-none overflow-hidden">
+          <span className="font-display font-bold text-[22vw] text-forest-900 leading-none opacity-60">
+            GHG
+          </span>
         </div>
-        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-accent-500 rounded-full blur-3xl opacity-20"></div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
-              Technical Excellence for <span className="text-accent-400">Global Health Impact</span>
+        {/* Top gold gradient line */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-500/50 to-transparent" />
+
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-40 z-10">
+          <div className="max-w-4xl">
+            {/* Eyebrow */}
+            <div className="flex items-center gap-3 mb-10 animate-fade-in">
+              <span className="w-8 h-px bg-gold-400" />
+              <span className="text-gold-400 text-[11px] tracking-[0.3em] uppercase font-medium">
+                Technical Consultancy · Est. 2008
+              </span>
+            </div>
+
+            {/* Headline */}
+            <h1
+              className="font-display font-light text-parchment-100 leading-[0.93] mb-10 animate-fade-up"
+              style={{ fontSize: 'clamp(3.5rem, 9vw, 7rem)', animationDelay: '0.1s' }}
+            >
+              Technical<br />
+              <em className="italic text-parchment-300">Excellence</em><br />
+              <span className="text-gold-400">for Global</span><br />
+              Health Impact
             </h1>
-            <p className="text-lg md:text-xl text-slate-300 mb-8 leading-relaxed">
-              We partner with GAVI, WHO, and UNICEF to design resilient health systems and deliver data-driven strategies for the world's most pressing health challenges.
+
+            {/* Subtext */}
+            <p
+              className="text-parchment-400 text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-14 animate-fade-up"
+              style={{ animationDelay: '0.25s' }}
+            >
+              Founded by a former UNICEF Global Health Advisor with 20+ years of field work
+              across Somalia, Afghanistan, and Lebanon — GHG translates institutional
+              knowledge into precise, implementable solutions for governments and global health partners.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/expertise">
-                <Button size="lg" className="rounded-full w-full sm:w-auto">
-                  Our Expertise
-                  <ArrowRight size={18} className="ml-2" />
-                </Button>
+
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: '0.4s' }}>
+              <Link
+                to="/expertise"
+                className="group inline-flex items-center gap-3 bg-gold-400 text-forest-950 px-8 py-4 text-[11px] tracking-[0.15em] uppercase font-medium hover:bg-gold-300 transition-colors duration-200"
+              >
+                Our Expertise
+                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link to="/contact">
-                <Button variant="outline" size="lg" className="rounded-full border-slate-500 text-white hover:bg-white/10 hover:text-white w-full sm:w-auto">
-                  Contact Us
-                </Button>
+              <Link
+                to="/contact"
+                className="group inline-flex items-center gap-3 border border-parchment-600 text-parchment-200 px-8 py-4 text-[11px] tracking-[0.15em] uppercase font-medium hover:bg-white/5 transition-colors duration-200"
+              >
+                Work With Dr. Mirza
+                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>
+
+          {/* Scroll hint */}
+          <div className="absolute bottom-10 left-6 lg:left-8 flex items-center gap-2 animate-fade-in" style={{ animationDelay: '0.9s' }}>
+            <ArrowDownRight size={14} className="text-gold-400" />
+            <span className="text-parchment-500 text-[10px] tracking-[0.25em] uppercase">Scroll</span>
+          </div>
         </div>
+
+        {/* Bottom edge */}
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-500/30 to-transparent" />
       </section>
 
-      {/* CLIENTS/PARTNERS LOGO STRIP */}
-      <section className="bg-slate-50 py-10 border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-sm font-semibold text-slate-500 uppercase tracking-widest mb-8">Trusted by global leaders</p>
-          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-            <span className="text-2xl font-bold text-slate-800">WHO</span>
-            <span className="text-2xl font-bold text-slate-800">unicef</span>
-            <span className="text-2xl font-bold text-slate-800">Gavi</span>
-            <span className="text-2xl font-bold text-slate-800">BILL & MELINDA GATES FOUNDATION</span>
+      {/* ── PARTNERS ─────────────────────────────────────────────── */}
+      <section className="bg-parchment-100 py-14 border-b border-parchment-200">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <p className="text-center text-[10px] font-medium text-ink-400 tracking-[0.3em] uppercase mb-10">
+            Career Built Across Leading Global Institutions
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-20">
+            {['WHO', 'UNICEF', 'Gavi', 'Bill & Melinda Gates Foundation', 'Africa CDC'].map((partner) => (
+              <span
+                key={partner}
+                className="font-display text-xl md:text-2xl font-medium text-ink-300 hover:text-forest-700 transition-colors duration-300 cursor-default"
+              >
+                {partner}
+              </span>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* HIGHLIGHT */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      {/* ── MISSION ──────────────────────────────────────────────── */}
+      <section className="py-24 md:py-36 bg-parchment-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-28 items-start">
+
             <div>
-              <h2 className="text-3xl font-bold text-brand-900 mb-6">Bridging the Gap Between Policy and Implementation</h2>
-              <div className="w-20 h-1.5 bg-accent-500 mb-8"></div>
-              <p className="text-slate-600 mb-6 leading-relaxed">
-                Global Health Group is a specialized consultancy firm dedicated to strengthening health systems in low- and middle-income countries. With decades of collective experience, our team provides technical assistance that is both rigorous and context-specific.
+              <div className="flex items-center gap-3 mb-6">
+                <span className="w-8 h-px bg-gold-400" />
+                <span className="text-gold-600 text-[11px] tracking-[0.25em] uppercase font-medium">Who We Are</span>
+              </div>
+              <h2 className="font-display font-light text-forest-900 leading-tight mb-8" style={{ fontSize: 'clamp(2.5rem, 5vw, 3.75rem)' }}>
+                Bridging Policy<br />
+                <em className="italic">&amp; Implementation</em>
+              </h2>
+              <p className="text-ink-600 text-lg font-light leading-relaxed mb-10">
+                Global Health Group brings over two decades of frontline UNICEF experience to the world's most complex immunization and health systems challenges. Founded by a former Global Health Advisor at UNICEF Headquarters, our work is grounded in field reality — from post-conflict Somalia to fragile-state Afghanistan to policy corridors in Geneva and New York.
               </p>
-              <ul className="space-y-4 mt-8">
+
+              <div className="space-y-0 mb-10">
                 {[
-                  "Evidence-based strategy development",
-                  "Cross-sectoral partnership facilitation",
-                  "Rapid response mechanisms for outbreaks"
+                  'Vaccine delivery & immunization systems',
+                  'Policy translation from evidence to action',
+                  'Rapid response in fragile and conflict-affected states',
                 ].map((item, i) => (
-                  <li key={i} className="flex items-center space-x-3">
-                    <div className="bg-brand-100 p-1 rounded-full text-brand-600">
-                       <ShieldCheck size={16} />
-                    </div>
-                    <span className="text-slate-700 font-medium">{item}</span>
-                  </li>
+                  <div key={i} className="flex items-center gap-4 py-4 border-b border-ink-200">
+                    <span className="w-2 h-2 bg-gold-400 rounded-full flex-shrink-0" />
+                    <span className="text-ink-700 font-medium text-sm">{item}</span>
+                  </div>
                 ))}
-              </ul>
-              <div className="mt-8">
-                <Link to="/about" className="text-brand-700 font-semibold hover:text-brand-900 inline-flex items-center">
-                  Read our full mission <ArrowRight size={16} className="ml-2" />
-                </Link>
+              </div>
+
+              <Link
+                to="/about"
+                className="group inline-flex items-center gap-2 text-forest-800 text-[11px] tracking-[0.15em] uppercase font-medium hover:text-forest-600 transition-colors"
+              >
+                Read Our Mission
+                <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+
+            <div className="relative pt-8 lg:pt-0">
+              <div className="relative h-[480px] overflow-hidden">
+                <img
+                  src="https://picsum.photos/seed/health1/800/600"
+                  alt="Global Health Team"
+                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-forest-950/80 via-forest-950/10 to-transparent" />
+                <div className="absolute bottom-8 left-8">
+                  <div className="font-display text-7xl font-light text-gold-400">20+</div>
+                  <div className="text-[10px] tracking-[0.2em] uppercase text-parchment-300 mt-1">Years at UNICEF</div>
+                </div>
+              </div>
+              {/* Floating stat card */}
+              <div className="absolute -bottom-8 -right-2 md:-right-6 bg-forest-900 text-parchment-100 p-8 w-44 md:w-52 shadow-xl">
+                <div className="font-display text-5xl font-light text-gold-400">50+</div>
+                <div className="text-[10px] tracking-[0.15em] uppercase text-parchment-400 mt-2">Countries of Field Work</div>
               </div>
             </div>
-            <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl bg-brand-900">
-              <img 
-                src="https://picsum.photos/seed/health1/800/600" 
-                alt="Global Health Team Meeting" 
-                className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500"
-              />
-            </div>
           </div>
         </div>
       </section>
 
-      {/* STATS */}
-      <section className="py-16 bg-brand-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      {/* ── STATS ────────────────────────────────────────────────── */}
+      <section className="py-24 bg-forest-900 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 right-0 w-80 h-80 rounded-full border border-forest-800 translate-x-40 -translate-y-40" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full border border-forest-800 -translate-x-48 translate-y-48" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4">
             {[
-              { num: "50+", label: "Countries Served" },
-              { num: "200+", label: "Projects Completed" },
-              { num: "$500M", label: "Grant Funding Secured" },
-              { num: "15", label: "Years of Excellence" },
+              { num: '50+',  label: 'Countries of Field Operation' },
+              { num: '25+',  label: 'Peer-Reviewed Publications' },
+              { num: '20+',  label: 'Years at UNICEF' },
+              { num: '3',    label: 'Global Health Roadmaps Co-Led' },
             ].map((stat, i) => (
-              <div key={i}>
-                <div className="text-4xl md:text-5xl font-bold text-accent-400 mb-2">{stat.num}</div>
-                <div className="text-brand-200 font-medium tracking-wide text-sm uppercase">{stat.label}</div>
+              <div
+                key={i}
+                className={`py-12 px-6 md:px-10 text-center border-forest-800
+                  ${i < 3 ? 'md:border-r' : ''}
+                  ${i % 2 === 0 && i < 2 ? 'border-r' : ''}
+                  ${i < 2 ? 'border-b md:border-b-0' : ''}
+                `}
+              >
+                <div className="font-display font-light text-gold-400 mb-3" style={{ fontSize: 'clamp(3rem, 6vw, 5rem)' }}>
+                  {stat.num}
+                </div>
+                <div className="text-[10px] tracking-[0.2em] uppercase font-medium text-parchment-400">
+                  {stat.label}
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-24 bg-brand-50">
-        <div className="max-w-4xl mx-auto text-center px-4">
-          <h2 className="text-3xl font-bold text-brand-900 mb-6">Ready to Scale Your Impact?</h2>
-          <p className="text-lg text-slate-600 mb-8">
-            Our team of technical consultants is ready to support your organization in achieving its global health goals.
+      {/* ── SERVICES PREVIEW ─────────────────────────────────────── */}
+      <section className="py-24 md:py-32 bg-parchment-100">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <span className="w-8 h-px bg-gold-400" />
+                <span className="text-gold-600 text-[11px] tracking-[0.25em] uppercase font-medium">What We Do</span>
+              </div>
+              <h2 className="font-display font-light text-forest-900 leading-tight" style={{ fontSize: 'clamp(2.5rem, 5vw, 3.75rem)' }}>
+                Our Core<br /><em className="italic">Services</em>
+              </h2>
+            </div>
+            <Link
+              to="/services"
+              className="group inline-flex items-center gap-2 text-forest-800 text-[11px] tracking-[0.15em] uppercase font-medium hover:text-forest-600 transition-colors self-end"
+            >
+              View All Services
+              <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 border border-ink-200 shadow-sm">
+            {[
+              {
+                num: '01',
+                title: 'Vaccine Delivery & Cold Chain',
+                desc: 'Optimizing immunization supply chains from manufacturer to the last mile, ensuring potency across every touchpoint.',
+              },
+              {
+                num: '02',
+                title: 'Health Systems Strengthening',
+                desc: 'Capacity building and policy reform to achieve Universal Health Coverage — addressing governance, financing, and workforce gaps.',
+              },
+              {
+                num: '03',
+                title: 'Monitoring & Evaluation',
+                desc: 'Robust impact assessments that move beyond output tracking to measure genuine health outcomes and system improvements.',
+              },
+            ].map((service, i) => (
+              <div
+                key={i}
+                className={`p-10 bg-white group hover:bg-forest-900 transition-all duration-300 cursor-default ${i < 2 ? 'border-b md:border-b-0 md:border-r border-ink-200' : ''}`}
+              >
+                <div className="font-display text-7xl font-light text-parchment-200 group-hover:text-forest-700 transition-colors duration-300 mb-8 leading-none">
+                  {service.num}
+                </div>
+                <h3 className="font-display text-2xl font-medium text-forest-900 group-hover:text-parchment-100 transition-colors duration-300 mb-4 leading-snug">
+                  {service.title}
+                </h3>
+                <p className="text-ink-500 text-sm font-light leading-relaxed group-hover:text-parchment-300 transition-colors duration-300">
+                  {service.desc}
+                </p>
+                <div className="mt-10 w-8 h-px bg-gold-400 group-hover:w-16 transition-all duration-500" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA ──────────────────────────────────────────────────── */}
+      <section className="py-32 bg-forest-950 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none select-none flex items-center justify-center">
+          <span className="font-display font-bold text-forest-900 opacity-25 whitespace-nowrap" style={{ fontSize: '18vw' }}>
+            Impact
+          </span>
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto text-center px-6">
+          <div className="flex items-center justify-center gap-3 mb-8">
+            <span className="w-8 h-px bg-gold-400" />
+            <span className="text-gold-400 text-[11px] tracking-[0.3em] uppercase font-medium">Ready to Begin</span>
+            <span className="w-8 h-px bg-gold-400" />
+          </div>
+          <h2
+            className="font-display font-light text-parchment-100 mb-8 leading-tight"
+            style={{ fontSize: 'clamp(3rem, 7vw, 5.5rem)' }}
+          >
+            Ready to Scale<br />
+            <em className="italic text-gold-400">Your Impact?</em>
+          </h2>
+          <p className="text-parchment-400 text-lg font-light mb-14 max-w-2xl mx-auto">
+            Our team of technical consultants is ready to support your organization
+            in achieving its global health goals.
           </p>
-          <Link to="/contact">
-            <Button size="lg" variant="primary">Schedule a Consultation</Button>
+          <Link
+            to="/contact"
+            className="group inline-flex items-center gap-3 bg-gold-400 text-forest-950 px-10 py-5 text-[11px] tracking-[0.15em] uppercase font-medium hover:bg-gold-300 transition-colors duration-200"
+          >
+            Schedule a Consultation
+            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
       </section>

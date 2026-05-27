@@ -41,24 +41,18 @@ const AIConsultant: React.FC = () => {
 
     try {
       const stream = await sendMessageStream(userMsg.text);
-      
       const botMsgId = (Date.now() + 1).toString();
       setMessages(prev => [...prev, { id: botMsgId, role: 'model', text: '' }]);
 
       let fullText = '';
-      
       for await (const chunk of stream) {
         const c = chunk as GenerateContentResponse;
         const textChunk = c.text || '';
         fullText += textChunk;
-        
-        setMessages(prev => 
-          prev.map(msg => 
-            msg.id === botMsgId ? { ...msg, text: fullText } : msg
-          )
+        setMessages(prev =>
+          prev.map(msg => msg.id === botMsgId ? { ...msg, text: fullText } : msg)
         );
       }
-
     } catch (error) {
       console.error("Chat error:", error);
       setMessages(prev => [...prev, {
@@ -76,71 +70,63 @@ const AIConsultant: React.FC = () => {
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end pointer-events-none">
       {/* Chat Window */}
       {isOpen && (
-        <div className="pointer-events-auto mb-4 w-[90vw] max-w-[400px] h-[500px] bg-white rounded-2xl shadow-2xl flex flex-col border border-slate-200 overflow-hidden transform transition-all duration-300 ease-out origin-bottom-right">
+        <div className="pointer-events-auto mb-4 w-[90vw] max-w-[400px] h-[500px] bg-white rounded-none shadow-2xl flex flex-col overflow-hidden border border-parchment-200 transform transition-all duration-300 ease-out origin-bottom-right">
           {/* Header */}
-          <div className="bg-brand-900 p-4 flex justify-between items-center text-white">
-            <div className="flex items-center space-x-2">
-              <div className="p-1.5 bg-brand-800 rounded-full">
-                <Bot size={20} />
+          <div className="bg-forest-900 p-4 flex justify-between items-center text-parchment-100">
+            <div className="flex items-center gap-3">
+              <div className="p-1.5 bg-forest-800 rounded-full">
+                <Bot size={18} className="text-gold-400" />
               </div>
               <div>
-                <h3 className="font-semibold text-sm">GHG Technical Assistant</h3>
-                <p className="text-xs text-brand-200">Powered by Gemini AI</p>
+                <h3 className="font-sans font-medium text-sm tracking-wide">GHG Technical Assistant</h3>
+                <p className="text-[10px] text-parchment-400 tracking-[0.1em] uppercase">Powered by Gemini AI</p>
               </div>
             </div>
-            <button 
-              onClick={() => setIsOpen(false)}
-              className="text-brand-200 hover:text-white transition-colors"
-            >
-              <X size={20} />
+            <button onClick={() => setIsOpen(false)} className="text-parchment-400 hover:text-parchment-100 transition-colors">
+              <X size={18} />
             </button>
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50">
+          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-parchment-50 scrollbar-hide">
             {messages.map((msg) => (
-              <div
-                key={msg.id}
-                className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
-              >
-                <div
-                  className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${
-                    msg.role === 'user'
-                      ? 'bg-brand-800 text-white rounded-br-none'
-                      : 'bg-white border border-slate-200 text-slate-700 rounded-bl-none shadow-sm'
-                  } ${msg.isError ? 'bg-red-50 text-red-600 border-red-200' : ''}`}
-                >
+              <div key={msg.id} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+                <div className={`max-w-[85%] px-4 py-3 text-sm leading-relaxed font-light ${
+                  msg.role === 'user'
+                    ? 'bg-forest-900 text-parchment-100 rounded-tl-2xl rounded-tr-2xl rounded-bl-2xl'
+                    : 'bg-white border border-parchment-200 text-ink-700 rounded-tr-2xl rounded-bl-2xl rounded-br-2xl shadow-sm'
+                } ${msg.isError ? 'bg-red-50 text-red-700 border-red-200' : ''}`}>
                   {msg.text}
                 </div>
               </div>
             ))}
             {isLoading && (
               <div className="flex justify-start">
-                <div className="bg-white border border-slate-200 p-3 rounded-2xl rounded-bl-none shadow-sm flex items-center space-x-2">
-                  <Loader2 className="animate-spin text-brand-600" size={16} />
-                  <span className="text-xs text-slate-500">Analyzing...</span>
+                <div className="bg-white border border-parchment-200 p-3 rounded-2xl rounded-bl-none shadow-sm flex items-center gap-2">
+                  <Loader2 className="animate-spin text-gold-500" size={14} />
+                  <span className="text-xs text-ink-400 font-light tracking-wide">Analyzing...</span>
                 </div>
               </div>
             )}
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Input Area */}
-          <form onSubmit={handleSubmit} className="p-4 bg-white border-t border-slate-100">
-            <div className="flex space-x-2">
+          {/* Input */}
+          <form onSubmit={handleSubmit} className="p-4 bg-white border-t border-parchment-200">
+            <div className="flex gap-2">
               <input
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask about our services..."
-                className="flex-1 bg-slate-50 border border-slate-200 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all"
+                className="flex-1 bg-parchment-50 border border-parchment-200 px-4 py-2 text-sm font-light text-ink-800 placeholder:text-ink-300 focus:outline-none focus:border-forest-500 transition-colors"
               />
               <button
                 type="submit"
                 disabled={!input.trim() || isLoading}
-                className="bg-brand-800 text-white p-2 rounded-lg hover:bg-brand-900 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="bg-forest-900 text-parchment-100 p-2 hover:bg-forest-800 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
               >
-                <Send size={18} />
+                <Send size={16} />
               </button>
             </div>
           </form>
@@ -150,13 +136,13 @@ const AIConsultant: React.FC = () => {
       {/* Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="pointer-events-auto bg-brand-800 hover:bg-brand-900 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-105 group flex items-center space-x-0"
+        className="pointer-events-auto bg-gold-400 hover:bg-gold-300 text-forest-950 p-4 shadow-lg transition-all duration-200 hover:scale-105 flex items-center gap-0 group"
       >
-        <MessageSquare size={24} />
+        <MessageSquare size={22} />
         {!isOpen && (
-           <span className="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-2 transition-all duration-300 ease-in-out whitespace-nowrap text-sm font-medium">
-             Consult AI
-           </span>
+          <span className="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-2 transition-all duration-300 ease-in-out whitespace-nowrap text-xs font-medium tracking-wider uppercase">
+            Consult AI
+          </span>
         )}
       </button>
     </div>

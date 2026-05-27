@@ -2,16 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom Styles */
-body {
-  font-family: 'Inter', sans-serif;
+@layer base {
+  body {
+    font-family: 'Outfit', system-ui, sans-serif;
+    background-color: #fdf8ee;
+    color: #161616;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
 }
 
-/* Custom scrollbar for chat */
-.scrollbar-hide::-webkit-scrollbar {
-    display: none;
+/* Custom scrollbar */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Gold accent line utility */
+.gold-bar {
+  display: block;
+  width: 2rem;
+  height: 2px;
+  background: linear-gradient(90deg, #d4a84b, #e8c675);
 }
-.scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+
+/* Section divider */
+.section-rule {
+  border: none;
+  border-top: 1px solid rgba(212, 168, 75, 0.25);
 }
