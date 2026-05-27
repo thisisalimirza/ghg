@@ -125,7 +125,7 @@ const Expertise: React.FC = () => {
                   <div className="font-display font-light text-gold-400 leading-none mb-2" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>
                     {domain.stat.num}
                   </div>
-                  <div className="text-[10px] tracking-[0.2em] uppercase text-parchment-300">{domain.stat.label}</div>
+                  <div className="text-xs tracking-[0.15em] uppercase text-parchment-300">{domain.stat.label}</div>
                 </div>
               </div>
 

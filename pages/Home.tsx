@@ -22,7 +22,7 @@ const Home: React.FC = () => {
             <div className="flex items-center gap-3 mb-10 animate-fade-in">
               <span className="w-8 h-px bg-gold-400" />
               <span className="text-gold-400 text-[11px] tracking-[0.3em] uppercase font-medium">
-                Technical Consultancy · Est. 2008
+                Technical Consultancy · Est. 2025
               </span>
             </div>
 
@@ -50,17 +50,17 @@ const Home: React.FC = () => {
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: '0.4s' }}>
               <Link
-                to="/expertise"
+                to="/contact"
                 className="group inline-flex items-center gap-3 bg-gold-400 text-forest-950 px-8 py-4 text-[11px] tracking-[0.15em] uppercase font-medium hover:bg-gold-300 transition-colors duration-200"
               >
-                Our Expertise
+                Work With Dr. Mirza
                 <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
-                to="/contact"
+                to="/expertise"
                 className="group inline-flex items-center gap-3 border border-parchment-600 text-parchment-200 px-8 py-4 text-[11px] tracking-[0.15em] uppercase font-medium hover:bg-white/5 transition-colors duration-200"
               >
-                Work With Dr. Mirza
+                Our Expertise
                 <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
@@ -80,7 +80,7 @@ const Home: React.FC = () => {
       {/* ── PARTNERS ─────────────────────────────────────────────── */}
       <section className="bg-parchment-100 py-14 border-b border-parchment-200">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <p className="text-center text-[10px] font-medium text-ink-400 tracking-[0.3em] uppercase mb-10">
+          <p className="text-center text-xs font-medium text-ink-400 tracking-[0.2em] uppercase mb-10">
             Career Built Across Leading Global Institutions
           </p>
           <div className="flex flex-wrap justify-center items-center gap-10 md:gap-20">
@@ -146,13 +146,8 @@ const Home: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-forest-950/80 via-forest-950/10 to-transparent" />
                 <div className="absolute bottom-8 left-8">
                   <div className="font-display text-7xl font-light text-gold-400">20+</div>
-                  <div className="text-[10px] tracking-[0.2em] uppercase text-parchment-300 mt-1">Years at UNICEF</div>
+                  <div className="text-xs tracking-[0.2em] uppercase text-parchment-300 mt-1">Years at UNICEF</div>
                 </div>
-              </div>
-              {/* Floating stat card */}
-              <div className="absolute -bottom-8 -right-2 md:-right-6 bg-forest-900 text-parchment-100 p-8 w-44 md:w-52 shadow-xl">
-                <div className="font-display text-5xl font-light text-gold-400">50+</div>
-                <div className="text-[10px] tracking-[0.15em] uppercase text-parchment-400 mt-2">Countries of Field Work</div>
               </div>
             </div>
           </div>
@@ -184,7 +179,7 @@ const Home: React.FC = () => {
                 <div className="font-display font-light text-gold-400 mb-3" style={{ fontSize: 'clamp(3rem, 6vw, 5rem)' }}>
                   {stat.num}
                 </div>
-                <div className="text-[10px] tracking-[0.2em] uppercase font-medium text-parchment-400">
+                <div className="text-xs tracking-[0.15em] uppercase font-medium text-parchment-400">
                   {stat.label}
                 </div>
               </div>

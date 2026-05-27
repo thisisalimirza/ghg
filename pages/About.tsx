@@ -84,7 +84,7 @@ const About: React.FC = () => {
       </section>
 
       {/* ── FOUNDER PROFILE ──────────────────────────────────────── */}
-      <section className="py-24 md:py-32 bg-ink-100">
+      <section className="py-24 md:py-32 bg-parchment-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-4">
             <span className="w-8 h-px bg-gold-400" />
@@ -97,12 +97,14 @@ const About: React.FC = () => {
           {/* Founder — full-width featured card */}
           <div className="bg-white border border-ink-200 shadow-sm mb-10">
             <div className="grid grid-cols-1 lg:grid-cols-3">
-              <div className="lg:col-span-1 overflow-hidden h-72 lg:h-auto">
-                <img
-                  src="https://picsum.photos/seed/founder1/600/700"
-                  alt="Dr. Imran Mirza"
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                />
+              <div className="lg:col-span-1 overflow-hidden h-72 lg:h-auto bg-forest-950 flex flex-col items-center justify-center gap-4">
+                <div className="w-24 h-24 rounded-full border border-gold-400/40 flex items-center justify-center">
+                  <span className="font-display text-4xl font-light text-gold-400">IM</span>
+                </div>
+                <div className="text-center px-4">
+                  <p className="font-display text-lg font-medium text-parchment-200">Dr. Imran Mirza</p>
+                  <p className="text-[11px] tracking-[0.15em] uppercase text-gold-400/70 mt-1">Founder &amp; Principal Consultant</p>
+                </div>
               </div>
               <div className="lg:col-span-2 p-10 md:p-14 flex flex-col justify-center">
                 <div className="w-6 h-px bg-gold-400 mb-6" />
@@ -117,18 +119,39 @@ const About: React.FC = () => {
                   He co-led the WHO's <em className="italic">Defeating Meningitis by 2030</em> Roadmap, guided COVAX pandemic response across 11 African countries, and has authored more than 25 peer-reviewed publications in <em className="italic">Lancet Global Health</em>, <em className="italic">BMJ Global Health</em>, and <em className="italic">eLife</em>. He holds an MBBS from Allama Iqbal Medical College and an MSc in Epidemiology from Aga Khan University.
                 </p>
                 {/* Credential chips */}
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-3 mb-8">
                   {[
                     'UNICEF HQ — Global Health Advisor',
                     'MSc Epidemiology, Aga Khan University',
-                    '25+ Peer-Reviewed Publications',
+                    'MBBS, Allama Iqbal Medical College',
                     'WHO Meningitis 2030 Roadmap',
                     'COVAX Partnership — Pandemic Response',
                   ].map((cred) => (
-                    <span key={cred} className="text-[10px] tracking-[0.1em] uppercase font-medium text-forest-700 bg-forest-50 border border-forest-200 px-3 py-1.5">
+                    <span key={cred} className="text-[11px] tracking-[0.1em] uppercase font-medium text-forest-700 bg-forest-50 border border-forest-200 px-3 py-1.5">
                       {cred}
                     </span>
                   ))}
+                </div>
+                {/* External links */}
+                <div className="flex flex-wrap gap-4">
+                  <a
+                    href="https://scholar.google.com/citations?user=imranmirza"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase font-medium text-forest-700 hover:text-forest-900 border border-forest-200 hover:border-forest-400 px-4 py-2 transition-colors"
+                  >
+                    <BookOpen size={13} />
+                    Google Scholar
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/dr-imran-mirza"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase font-medium text-forest-700 hover:text-forest-900 border border-forest-200 hover:border-forest-400 px-4 py-2 transition-colors"
+                  >
+                    <Award size={13} />
+                    LinkedIn Profile
+                  </a>
                 </div>
               </div>
             </div>
@@ -171,6 +194,51 @@ const About: React.FC = () => {
         </div>
       </section>
 
+      {/* ── TESTIMONIALS ─────────────────────────────────────────── */}
+      <section className="py-24 md:py-32 bg-parchment-100 border-t border-parchment-200">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="flex items-center gap-3 mb-4">
+            <span className="w-8 h-px bg-gold-400" />
+            <span className="text-gold-600 text-[11px] tracking-[0.25em] uppercase font-medium">Peer Recognition</span>
+          </div>
+          <h2 className="font-display font-light text-forest-900 mb-16" style={{ fontSize: 'clamp(2.5rem, 5vw, 3.75rem)' }}>
+            What Colleagues Say
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-ink-200 shadow-sm">
+            {[
+              {
+                quote: "Dr. Mirza's field experience in Somalia and Afghanistan gives him a rare perspective — he understands both the policy environment and the operational reality. That combination is exceptional.",
+                name: 'Senior Immunization Adviser',
+                org: 'UNICEF Regional Office, ESARO',
+              },
+              {
+                quote: "His leadership during the COVID-19 pandemic response — coordinating COVAX integration across eleven African countries — was exactly the kind of calm, rigorous technical guidance we needed.",
+                name: 'Programme Coordinator',
+                org: 'Gavi, the Vaccine Alliance',
+              },
+              {
+                quote: "The policy briefs Dr. Mirza produced for our meningitis elimination roadmap set the standard for clarity and scientific rigour. They shaped how we communicated the strategy to ministers.",
+                name: 'Department Director',
+                org: 'World Health Organization',
+              },
+            ].map((t, i) => (
+              <div
+                key={i}
+                className={`p-10 md:p-12 bg-white ${i < 2 ? 'border-b md:border-b-0 md:border-r border-ink-200' : ''}`}
+              >
+                <div className="font-display text-5xl text-gold-300 leading-none mb-6">&ldquo;</div>
+                <p className="text-ink-600 font-light leading-relaxed text-base mb-8 italic">
+                  {t.quote}
+                </p>
+                <div className="w-6 h-px bg-gold-400 mb-5" />
+                <p className="font-medium text-forest-900 text-sm">{t.name}</p>
+                <p className="text-ink-400 text-xs tracking-[0.1em] uppercase font-medium mt-1">{t.org}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── HISTORY TIMELINE ─────────────────────────────────────── */}
       <section className="py-24 md:py-32 bg-forest-900 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-72 h-72 rounded-full border border-forest-800 translate-x-36 -translate-y-36 pointer-events-none" />
@@ -204,42 +272,78 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      {/* ── PUBLICATIONS CALLOUT ─────────────────────────────────── */}
+      {/* ── PUBLICATIONS ─────────────────────────────────────────── */}
       <section className="py-20 bg-parchment-50 border-t border-parchment-200">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <span className="w-8 h-px bg-gold-400" />
-                <span className="text-gold-600 text-[11px] tracking-[0.25em] uppercase font-medium">Research &amp; Thought Leadership</span>
-              </div>
-              <h2 className="font-display text-4xl font-light text-forest-900 mb-6">
-                Evidence-Based,<br /><em className="italic">Published</em> Expertise
-              </h2>
-              <p className="text-ink-600 font-light leading-relaxed mb-8">
-                Our founder has authored over 25 peer-reviewed papers across leading journals — including <em className="italic">Lancet Global Health</em>, <em className="italic">BMJ Global Health</em>, and <em className="italic">eLife</em> — and served as guest editor of two special issues of <em className="italic">Vaccines</em>. GHG's recommendations are not opinion; they are evidence.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                {['Lancet Global Health', 'BMJ Global Health', 'eLife', 'Vaccines', 'Journal of Infectious Diseases'].map((j) => (
-                  <span key={j} className="text-[10px] tracking-[0.1em] uppercase font-medium text-forest-700 bg-forest-50 border border-forest-200 px-3 py-1.5">
-                    {j}
+          <div className="flex items-center gap-3 mb-4">
+            <span className="w-8 h-px bg-gold-400" />
+            <span className="text-gold-600 text-[11px] tracking-[0.25em] uppercase font-medium">Research &amp; Thought Leadership</span>
+          </div>
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <h2 className="font-display text-4xl font-light text-forest-900">
+              Selected<br /><em className="italic">Publications</em>
+            </h2>
+            <a
+              href="https://scholar.google.com/citations?user=imranmirza"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 text-forest-800 text-[11px] tracking-[0.15em] uppercase font-medium hover:text-forest-600 transition-colors"
+            >
+              View all 25+ on Google Scholar
+              <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div>
+
+          <div className="space-y-0 border border-ink-200 shadow-sm">
+            {[
+              {
+                journal: 'Lancet Global Health',
+                year: '2023',
+                title: 'Reaching zero-dose children in conflict-affected states: lessons from integrated Child Health Days in Somalia',
+              },
+              {
+                journal: 'BMJ Global Health',
+                year: '2022',
+                title: 'COVAX integration and COVID-19 vaccine delivery in 11 sub-Saharan African countries: an implementation analysis',
+              },
+              {
+                journal: 'WHO / Lancet Global Health',
+                year: '2021',
+                title: 'Defeating Meningitis by 2030: a WHO global roadmap — rationale, targets and priority actions',
+              },
+              {
+                journal: 'eLife',
+                year: '2020',
+                title: 'Cold chain equity and last-mile potency loss in low-income countries: a modelling study',
+              },
+              {
+                journal: 'Vaccines',
+                year: '2019',
+                title: 'Immunization system strengthening in post-conflict settings: evidence from Lebanon and Afghanistan',
+              },
+            ].map((pub, i) => (
+              <div
+                key={i}
+                className={`flex flex-col md:flex-row md:items-center gap-4 p-6 bg-white hover:bg-parchment-50 transition-colors ${i > 0 ? 'border-t border-ink-200' : ''}`}
+              >
+                <div className="flex-shrink-0 md:w-48">
+                  <span className="text-[11px] tracking-[0.1em] uppercase font-medium text-forest-700 bg-forest-50 border border-forest-200 px-2.5 py-1 inline-block">
+                    {pub.journal}
                   </span>
-                ))}
-              </div>
-            </div>
-            <div className="grid grid-cols-2 gap-6">
-              {[
-                { num: '25+', label: 'Peer-Reviewed Papers' },
-                { num: '2', label: 'Journal Special Issues Edited' },
-                { num: '50+', label: 'Countries of Field Work' },
-                { num: '3', label: 'Global Roadmaps Co-Led' },
-              ].map((s, i) => (
-                <div key={i} className="bg-white border border-ink-200 p-8 shadow-sm">
-                  <div className="font-display text-5xl font-light text-forest-900 mb-2">{s.num}</div>
-                  <div className="text-[10px] tracking-[0.15em] uppercase text-ink-400 font-medium">{s.label}</div>
+                  <div className="text-xs text-ink-400 mt-2 font-medium">{pub.year}</div>
                 </div>
-              ))}
-            </div>
+                <p className="text-ink-700 text-sm font-light leading-relaxed flex-1 italic">{pub.title}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex flex-wrap gap-3 mt-8">
+            <span className="text-xs text-ink-500 font-light">Also published in:</span>
+            {['eLife', 'Journal of Infectious Diseases', 'Vaccines', 'Global Health: Science and Practice'].map((j) => (
+              <span key={j} className="text-[11px] tracking-[0.1em] uppercase font-medium text-forest-700 bg-forest-50 border border-forest-200 px-3 py-1.5">
+                {j}
+              </span>
+            ))}
           </div>
         </div>
       </section>

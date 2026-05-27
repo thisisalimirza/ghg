@@ -104,13 +104,13 @@ const Services: React.FC = () => {
                 <h3 className="font-display text-2xl md:text-3xl font-medium text-forest-900 group-hover:text-parchment-100 transition-colors duration-300 mb-4 leading-snug">
                   {service.title}
                 </h3>
-                <p className="text-ink-500 font-light text-sm leading-relaxed mb-8 group-hover:text-parchment-300 transition-colors duration-300">
+                <p className="text-ink-600 font-light text-sm leading-relaxed mb-8 group-hover:text-parchment-300 transition-colors duration-300">
                   {service.desc}
                 </p>
                 <ul className="space-y-2">
                   {service.features.map((f, fi) => (
-                    <li key={fi} className="flex items-center gap-3 text-sm font-medium text-forest-700 group-hover:text-parchment-200 transition-colors duration-300">
-                      <span className="w-1 h-1 bg-gold-400 rounded-full flex-shrink-0" />
+                    <li key={fi} className="flex items-center gap-3 text-sm font-medium text-ink-700 group-hover:text-parchment-200 transition-colors duration-300">
+                      <span className="w-1.5 h-1.5 bg-gold-400 rounded-full flex-shrink-0" />
                       {f}
                     </li>
                   ))}
@@ -210,19 +210,19 @@ const Services: React.FC = () => {
                   ${i < 3 ? 'border-b border-ink-200' : ''}
                 `}
               >
-                <span className="inline-block text-[10px] tracking-[0.2em] uppercase font-medium text-gold-600 group-hover:text-gold-400 bg-parchment-100 group-hover:bg-forest-800 px-3 py-1 mb-6 transition-colors duration-300">
+                <span className="inline-block text-[11px] tracking-[0.15em] uppercase font-medium text-gold-600 group-hover:text-gold-400 bg-parchment-100 group-hover:bg-forest-800 px-3 py-1 mb-6 transition-colors duration-300">
                   {eng.duration}
                 </span>
                 <h3 className="font-display text-2xl font-medium text-forest-900 group-hover:text-parchment-100 mb-3 transition-colors duration-300">
                   {eng.title}
                 </h3>
-                <p className="text-ink-500 text-sm font-light leading-relaxed mb-6 group-hover:text-parchment-300 transition-colors duration-300">
+                <p className="text-ink-600 text-sm font-light leading-relaxed mb-6 group-hover:text-parchment-300 transition-colors duration-300">
                   {eng.desc}
                 </p>
                 <ul className="space-y-1.5">
                   {eng.examples.map((ex, ei) => (
-                    <li key={ei} className="flex items-center gap-2 text-xs text-forest-700 group-hover:text-parchment-300 font-medium transition-colors duration-300">
-                      <span className="w-1 h-1 bg-gold-400 rounded-full flex-shrink-0" />
+                    <li key={ei} className="flex items-center gap-2 text-xs text-ink-600 group-hover:text-parchment-300 font-medium transition-colors duration-300">
+                      <span className="w-1.5 h-1.5 bg-gold-400 rounded-full flex-shrink-0" />
                       {ex}
                     </li>
                   ))}
